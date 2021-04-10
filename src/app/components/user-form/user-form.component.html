@@ -1,0 +1,17 @@
+<div class="container">
+  <h1 class="title">Ingreso de usuario</h1>
+  <hr>
+  <form [formGroup]="userFormGroup">
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Nombre</label>
+      <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+        formControlName="name">
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Apellido</label>
+      <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+        formControlName="lastName">
+    </div>
+  </form>
+  <button type="submit" class="btn btn-primary" (click)="createNewUser()">Submit</button>
+</div>
