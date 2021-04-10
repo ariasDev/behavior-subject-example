@@ -18,13 +18,20 @@ export class UserFormComponent implements OnInit {
     });
   }
 
-  ngOnInit(): void {
+  ngOnInit(): void { }
 
+  createNewUser(userForm: FormGroup): void {
+    if (!userForm.valid) {
+      this.showAlert('algo esta mal en el formulario');
+    }
+    else {
+      this.userService.setUser(this.userFormGroup.value);
+      this.userFormGroup.reset();
+    }
   }
 
-  createNewUser(): void {
-    this.userService.setUser(this.userFormGroup.value);
-    this.userFormGroup.reset();
+  showAlert(message: string) {
+    alert(message);
   }
 
 }

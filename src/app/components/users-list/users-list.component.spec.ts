@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { UserService } from '../../services/user.service'
 import { UsersListComponent } from './users-list.component';
 
 describe('UsersListComponent', () => {
@@ -8,9 +8,12 @@ describe('UsersListComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ UsersListComponent ]
+      declarations: [UsersListComponent],
+      providers: [
+        UserService
+      ]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {
@@ -22,4 +25,5 @@ describe('UsersListComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
 });
