@@ -24,9 +24,6 @@ describe('UserFormComponent', () => {
       .compileComponents();
   });
 
-
-
-
   describe('Cuando voy a insertar un nuevo usuario en el formulario', () => {
 
     beforeEach(() => {
@@ -38,6 +35,10 @@ describe('UserFormComponent', () => {
 
     it('should create', () => {
       expect(component).toBeTruthy();
+    });
+
+    it('deberia mostar una alerta', () => {
+      component.showAlert('algo esta mal en el formulario');
     });
 
 
