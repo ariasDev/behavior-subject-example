@@ -1,3 +1,7 @@
-.container-app{
+/* .container-app{
     display: flex;
+} */
+
+.container{
+    padding-top: 50px;
 }

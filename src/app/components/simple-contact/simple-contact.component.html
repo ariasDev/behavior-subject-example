@@ -1,0 +1,47 @@
+<form [formGroup]="datosBasicosForm">
+    <div class="form-group">
+        <label>Selecciona tipo de documento</label>
+        <select class="form-control" formControlName="tipoDeDocumento">
+            <option>Cedula</option>
+            <option>Nit</option>
+        </select>
+        <label>Numero de documento</label>
+        <input type="number" class="form-control" placeholder="Ingresa tu numero de documento"
+            formControlName="numeroDocumento">
+    </div>
+
+    <div>
+
+    </div>
+
+    <!-- estos capmos se muestran cuando el tipo de documento es Cedula -->
+    <div class="form-group" *ngIf='tipodeDocumento === "Cedula"' formGroupName='nombrePersona'>
+        <label>Primer Nombre</label>
+        <input type="text" class="form-control" placeholder="Ingresa tu primer nombre" formControlName='primerNombre'>
+
+        <label>Segundo Nombre</label>
+        <input type="text" class="form-control" placeholder="Ingresa tu Segundo nombre" formControlName='segundoNombre'>
+
+        <label>Primer Apellido</label>
+        <input type="text" class="form-control" placeholder="Ingresa tu primer Apellido"
+            formControlName='primerApellido'>
+
+        <label>Segundo Apellido</label>
+        <input type="text" class="form-control" placeholder="Ingresa tu segundo Apellido"
+            formControlName='segundoApellido'>
+    </div>
+
+    <!-- estos campos se muestran cuando el tipo de documento es Nit -->
+    <div class="form-group" *ngIf='tipodeDocumento === "Nit"'>
+        <label>Nombre Empresa</label>
+        <input type="text" class="form-control" placeholder="Ingresa el nombre de la empresa">
+    </div>
+
+    <div class="form-group">
+        <label>Telefono</label>
+        <input type="number" class="form-control" placeholder="Ingresa un numero telefonico">
+
+        <label>Dirección</label>
+        <input type="text" class="form-control" placeholder="Ingresa una direccion residencial">
+    </div>
+</form>
